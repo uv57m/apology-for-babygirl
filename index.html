@@ -2,131 +2,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>I’m Sorry, Baby Girl 💔</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry Baby Girl 💔</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      color: white;
-      background: url('https://i.imgur.com/yuzk2vE.jpeg') no-repeat center center fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
-    }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-      margin: 80px auto;
+      color: white;
       text-align: center;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(255, 192, 203, 0.6);
+      padding: 50px 20px;
+      background-color: black;
     }
-
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
     h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 38px;
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
-
-    .message {
-      font-size: 20px;
-      white-space: pre-wrap;
-      text-align: left;
-      padding: 10px;
-      min-height: 300px;
+    p.typing {
+      font-size: 1.3em;
+      margin: 15px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
     }
-
-    #forgive-button {
-      display: none;
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    button {
       margin-top: 30px;
       padding: 15px 30px;
-      background-color: #ff6699;
+      font-size: 1em;
       border: none;
       border-radius: 30px;
-      font-size: 18px;
+      background: #ff6b81;
       color: white;
       cursor: pointer;
-      font-family: 'Roboto', sans-serif;
-      box-shadow: 0 5px 20px rgba(255, 105, 180, 0.5);
-      transition: 0.3s;
+      box-shadow: 0 0 10px #ff6b81;
     }
-
-    #forgive-button:hover {
-      background-color: #ff3366;
+    button:hover {
+      background: #ff4757;
+    }
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-
-<div class="overlay"></div>
-
-<div class="container">
-  <h1>I’m Sorry, Baby Girl 💔</h1>
-  <div class="message" id="message"></div>
-  <button id="forgive-button" onclick="alert('Thank you, baby girl 😭❤️')">💌 Tap to Forgive Yuv 💌</button>
-</div>
-
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f64b1f0cb9.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
-  const messages = [
-    "Hey baby girl... 💌",
-    "I know I did something really stupid... 😞",
-    "Asking you about Vaishnavi’s ID was dumb, and I hate that it hurt you. 😔",
-    "You have every right to be mad, babe.",
-    "But please know, it meant nothing — you're the only one I want. 💖",
-    "I miss you. I miss us. Your voice, your smile, your love. 🥺",
-    "Babe, I’m really sorry. Please don’t stay mad. 😭",
-    "You’re not just my girl, you’re my everything. 💘",
-    "I love you more than any mistake I could ever make. ❤️",
-    "Please forgive me, baby girl... 💔",
-    "Forever yours — Yuv 🖤"
-  ];
-
-  let currentMessage = 0;
-  let currentChar = 0;
-  const messageDiv = document.getElementById("message");
-  const button = document.getElementById("forgive-button");
-
-  function typeMessage() {
-    if (currentMessage < messages.length) {
-      let msg = messages[currentMessage];
-      if (currentChar < msg.length) {
-        messageDiv.innerHTML += msg.charAt(currentChar);
-        currentChar++;
-        setTimeout(typeMessage, 40);
-      } else {
-        messageDiv.innerHTML += "\n\n";
-        currentMessage++;
-        currentChar = 0;
-        setTimeout(typeMessage, 500);
-      }
-    } else {
-      button.style.display = "inline-block";
-    }
-  }
-
-  typeMessage();
-</script>
-
+  <audio autoplay loop>
+    <source src="apology.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="container">
+    <h1>I'm Really Sorry, Baby Girl 😔</h1>
+    <p class="typing">I know I messed up asking about Vaishnavi’s ID...</p>
+    <p class="typing">I had no wrong intentions, babe. I swear 😞</p>
+    <p class="typing">Please don’t stay mad at me, my bbaby girl 💔</p>
+    <p class="typing">You mean the world to me ❤️</p>
+    <p class="typing">I promise to never hurt you again, babe 🥺</p>
+    <p class="typing">Please forgive your stupid Yuv 🙏</p>
+    <button onclick="alert('Thank you for forgiving me, baby girl ❤️')">Tap to Forgive Yuv</button>
+  </div>
 </body>
 </html>
